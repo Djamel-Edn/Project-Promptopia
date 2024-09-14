@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 import {useSession} from 'next-auth/react'
 import {useRouter} from 'next/navigation'
 import Profile from '@components/Profile'
-const profile = () => {
+const Profile = () => {
     const router=useRouter()
     const {data:session}=useSession()
     const [posts,setPosts]=useState([])
@@ -41,4 +41,4 @@ const profile = () => {
   )
 }
 
-export default profile
+export default Profile

@@ -47,7 +47,7 @@ const Feed = () => {
   })
     setFilteredPosts(filteredPosts)
   
- }, [searchText])
+ }, [searchText,posts])
   useEffect(() => {
     const fetchPosts=async()=>{
       const res=await fetch('/api/Prompt')

@@ -1,13 +1,13 @@
-"use client"; // Ensures the page runs as a client component
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import React, { useEffect, useState, Suspense } from 'react';
+import { useRouter } from 'next/navigation';
 import Form from '../../components/Form';
 
-const EditPrompt = () => {
+const EditPromptContent = () => {
   const router = useRouter();
-  const searchParams = useSearchParams(); // Client-side hook
-  const promptId = searchParams.get('id'); // Retrieve the prompt ID from the URL
+  const searchParams = useSearchParams();
+  const promptId = searchParams.get('id');
 
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
@@ -68,6 +68,15 @@ const EditPrompt = () => {
       submitting={submitting}
       handleSubmit={handleEditPrompt}
     />
+  );
+};
+
+
+const EditPrompt = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EditPromptContent />
+    </Suspense>
   );
 };
 

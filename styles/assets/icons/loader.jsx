@@ -1,3 +1,6 @@
+import React from 'react';
+const Loader = ({height,width})=>{
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:transparent;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
 <g transform="rotate(0 50 50)">
   <rect x="47.5" y="12.5" rx="1.5" ry="1.5" width="5" height="15" fill="#ee6123">
@@ -61,3 +64,5 @@
   </rect>
 </g>
 </svg>
+}
+export default Loader;

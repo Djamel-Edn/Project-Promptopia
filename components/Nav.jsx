@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { signOut,signIn, useSession, getProviders  } from 'next-auth/react'
+import LogoSVG from '@styles/assets/images/logo'
 const Nav = () => {
     const {data:session}=useSession() 
     const [providers,setProviders]=useState(null)
@@ -18,7 +19,7 @@ const Nav = () => {
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
         <Link href='/' className='flex gap-2 flex-center'>
-        <Image src={session?.user.image}
+        <LogoSVG
         alt='logo'
         width={30}
         height={30}

@@ -11,7 +11,7 @@ const PromptCardList = ({data, handleTagClick}) => {
     </div>
   )
 }
-import React from 'react'
+
 
 const Feed = () => {
   const [searchText, setSearchText] = useState('')

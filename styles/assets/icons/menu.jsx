@@ -1,3 +1,6 @@
+import React from 'react';
+const Menu=({height,width})=>{
+
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px"
     height="30px" viewBox="0,0,256,256">
     <g fill="#262626" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
@@ -10,3 +13,5 @@
         </g>
     </g>
 </svg>
+}
+export default Menu

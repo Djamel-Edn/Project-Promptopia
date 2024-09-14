@@ -18,7 +18,7 @@ const profile = () => {
           const res=await fetch(`/api/users/${params.id}`)
           const data=await res.json()
           setPosts(data)
-          console.log(data,'data')
+       
         }
        if (session?.user) fetchPosts()
        

@@ -1,6 +1,6 @@
-"use client";
+"use client"; // Ensures this page runs as a client component
 
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Form from '../../components/Form';
 
@@ -61,15 +61,13 @@ const EditPrompt = () => {
   };
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Form
-        type="Edit"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={EditPrompt}
-      />
-    </Suspense>
+    <Form
+      type="Edit"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={EditPrompt}
+    />
   );
 };
 

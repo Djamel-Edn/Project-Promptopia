@@ -1,13 +1,13 @@
-"use client"; // Ensure the page runs as a client component
+"use client"; // Ensures the page runs as a client component
 
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Form from '../../components/Form';
 
 const EditPrompt = () => {
   const router = useRouter();
-  const searchParams = useSearchParams(); // Needs to be used in a Suspense boundary
-  const promptId = searchParams.get('id');
+  const searchParams = useSearchParams(); // Client-side hook
+  const promptId = searchParams.get('id'); // Retrieve the prompt ID from the URL
 
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
@@ -33,7 +33,7 @@ const EditPrompt = () => {
     getPrompt();
   }, [promptId]);
 
-  const EditPrompt = async (e) => {
+  const handleEditPrompt = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     if (!promptId) return;
@@ -61,15 +61,13 @@ const EditPrompt = () => {
   };
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Form
-        type="Edit"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={EditPrompt}
-      />
-    </Suspense>
+    <Form
+      type="Edit"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={handleEditPrompt}
+    />
   );
 };
 

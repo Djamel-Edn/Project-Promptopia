@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useEffect, useState, Suspense } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Form from '../../components/Form';
 
+// Create a separate component for the content that uses useSearchParams
 const EditPromptContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -71,7 +72,7 @@ const EditPromptContent = () => {
   );
 };
 
-
+// Main component wrapped in Suspense
 const EditPrompt = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>

@@ -34,7 +34,7 @@ const Feed = () => {
     setFilteredPosts(posts.slice(0, 9));
     return;
   }
-  if (!posts){return;}
+  
   const searchValue = searchText.toLowerCase();
   const filteredPosts = posts.filter((post) => {
     if (!post.tag && !post.creator) {
@@ -58,7 +58,6 @@ const Feed = () => {
     }
     fetchPosts()
   }, [])
-  console.log(filteredPosts)
   return (
 
     <section className='feed'>

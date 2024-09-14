@@ -22,7 +22,7 @@ const ProfilePage = () => {
         }
        if (session?.user) fetchPosts()
        
-      }}, [session?.user])
+      }}, [session?.user,params.id])
   return (
     <Profile name="My" desc="Welcome to my personalized profile page" data={posts} />
   )

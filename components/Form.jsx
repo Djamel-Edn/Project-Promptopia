@@ -14,7 +14,7 @@ const Form = ({
       {type}  Post
         </span></h1>
         <p className='desc text-left max-w-md'>
-        {type} and share amazing prompts with the world,and let your inagination run wild with any AI-powered platform.
+        {type} and share amazing prompts with the world,and let your imagination run wild with any AI-powered platform.
         </p>
         <form onSubmit={handleSubmit} className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphisn'>
       <label ><span className='font-satoshi font-semibold text-base text-gray-700'>Your AI prompt</span>

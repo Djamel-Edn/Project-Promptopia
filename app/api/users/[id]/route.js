@@ -1,7 +1,7 @@
 import Post from "@models/post";
 import { connectToDatabase } from "@utils/Database";
 export const GET = async (req,{params}) => {
-
+    console.log(params,'patrams')
     try {
         await connectToDatabase();
         const posts=await Post.find({creator:params.id}).populate('creator');

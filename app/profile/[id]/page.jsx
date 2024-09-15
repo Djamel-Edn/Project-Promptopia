@@ -10,21 +10,21 @@ const ProfilePage = () => {
     const params = useParams();
     const {data:session}=useSession()
     const [posts,setPosts]=useState([])
-    
+
     useEffect(() => {
-        if (params.id) {
-         
+      if (params.id){
+
         const fetchPosts=async()=>{
           const res=await fetch(`/api/users/${params.id}`)
           const data=await res.json()
           setPosts(data)
        
         }
-       if (session?.user) fetchPosts()
-       
-      }}, [session?.user,params.id])
+        fetchPosts()
+      } 
+      }, [params?.id])
   return (
-    <Profile name="My" desc="Welcome to my personalized profile page" data={posts} />
+    <Profile name="My" desc="Welcome to my personalised profile page" data={posts} />
   )
 }
 
